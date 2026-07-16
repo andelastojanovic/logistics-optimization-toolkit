@@ -1,14 +1,16 @@
 # Logistics Optimization Toolkit 🚚📊
 
-A collection of Python-based decision support tools designed for **Business Analysts**, **Operations Managers**, **Logistics Specialists**, and **Project Managers**.
+Python-based decision support tools for Logistics, Supply Chain, Operations Management and Business Analysis.
 
-The goal of this repository is to demonstrate how engineering, business analysis, and data-driven decision making can improve operational efficiency across logistics and supply chain environments.
+This repository contains practical Python projects that simulate real-world business scenarios in logistics, supply chain, operations management and business analysis.
+
+Each project is designed to demonstrate analytical thinking, process optimization and data-driven decision making through software development.
 
 ---
 
-# 📂 Projects
+## 📂 Projects
 
-## 🚛 Fleet Cost & Maintenance Optimizer
+### 🚛 Fleet Cost & Maintenance Optimizer
 
 A Python application that prioritizes preventive maintenance using a risk-based approach.
 
@@ -33,7 +35,7 @@ This project helps organizations:
 
 ---
 
-## 🌍 Border Crossing Optimizer
+### 🌍 Border Crossing Optimizer
 
 A simulation tool designed around the **Trieste–Belgrade logistics corridor**.
 
@@ -57,22 +59,23 @@ It demonstrates how simulation models can support logistics planning and infrast
 
 # 🛠 Skills Demonstrated
 
-- Business Analysis
-- Operations Management
-- Logistics Optimization
-- Project Management
-- Decision Support Systems
-- Data Analysis
-- Object-Oriented Programming
-- Python
-- Pandas
+Business Analysis
+Project Management
+Operations Management
+Supply Chain Analytics
+Decision Support Systems
+Python
+Pandas
+SQL
+Data Analysis
+Object-Oriented Programming
 
 ---
 
 # 📦 Installation
 
 ```bash
-git clone https://github.com/USERNAME/logistics-optimization-toolkit.git
+git clone https://github.com/andelastojanovic/logistics-optimization-toolkit.git
 ```
 
 Install dependencies
@@ -95,42 +98,36 @@ python border_crossing_optimizer.py
 
 ---
 
-# 🚀 Roadmap
+## 🚀 Roadmap
 
-Future projects planned for this repository:
-
-- Power BI Executive Dashboard
-- Supply Chain KPI Simulator
-- Inventory Optimization Model
-- Transportation Cost Optimizer
-- PMO Analytics Dashboard
+- [ ] Power BI Executive Dashboard
+- [ ] Supply Chain KPI Simulator
+- [ ] Inventory Optimization Model
+- [ ] Transportation Cost Optimizer
+- [ ] PMO Analytics Dashboard
+- [ ] SQL Database Integration
+- [ ] Streamlit Web Application
 
 ---
 
-# 👩‍💻 Author
+## 👩‍💻 Author
 
 **Andela Stojanovic**
 
 Management Engineering Student
 
-Google Project Management
+Business Analysis • Project Management • Business Intelligence
+
+Google Project Management Professional Certificate
 
 Microsoft Power BI Data Analyst
 
 Cisco Python • Networking • Cybersecurity
 
-🇮🇹 Italian & Serbian | 🇬🇧 English
+📍 Italy & Serbia
 
 LinkedIn:
-www.linkedin.com/in/andela-stojanovic
+linkedin.com/in/andela-stojanovic
 
 GitHub:
 github.com/andelastojanovic
-
-## 🚀 Future Improvements
-
-- Interactive Streamlit dashboard
-- Power BI integration
-- SQL database support
-- Predictive Machine Learning model
-- REST API
