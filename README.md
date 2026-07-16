@@ -126,3 +126,11 @@ www.linkedin.com/in/andela-stojanovic
 
 GitHub:
 github.com/andelastojanovic
+
+## 🚀 Future Improvements
+
+- Interactive Streamlit dashboard
+- Power BI integration
+- SQL database support
+- Predictive Machine Learning model
+- REST API
