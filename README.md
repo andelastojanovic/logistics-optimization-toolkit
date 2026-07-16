@@ -1,48 +1,128 @@
-# Fleet Cost & Maintenance Optimizer 🚚💼
+# Logistics Optimization Toolkit 🚚📊
 
-A Python-based decision support tool designed for **Logistics Managers** and **Financial Controllers** to optimize corporate fleet maintenance budgets and prevent operational losses.
+A collection of Python-based decision support tools designed for **Business Analysts**, **Operations Managers**, **Logistics Specialists**, and **Project Managers**.
 
-## 📈 Business Case & Value Proposition
-Unplanned vehicle breakdowns can cost an enterprise up to 3 times more than preventive maintenance. This project applies an engineering approach to operations by:
-* **Predicting Risk**: Evaluating vehicle breakdown probability using mileage and asset age.
-* **Capital Allocation**: Optimizing a constrained budget by prioritizing high-risk corporate assets.
-* **Financial Impact**: Maximizing Return on Investment (ROI) by calculating net cost savings.
+The goal of this repository is to demonstrate how engineering, business analysis, and data-driven decision making can improve operational efficiency across logistics and supply chain environments.
 
-## 🛠️ Tech Stack & Skills Demonstrated
-* **Language**: Python 3
-* **Libraries**: Pandas (Data Manipulation)
-* **Methodology**: Object-Oriented Programming (OOP), Data-Driven Decision Making
+---
 
-## 🚀 How It Works
-The core algorithm calculates a dynamic `Risk_Score` for each vehicle asset:
+# 📂 Projects
 
-\[Risk\_Score = \left(\frac{Mileage}{150,000} \times 0.6\right) + \left(\frac{Age}{10} \times 0.4\right)\]
+## 🚛 Fleet Cost & Maintenance Optimizer
 
-Vehicles scoring above `0.75` are flagged for urgent maintenance. The budget allocation engine then selects assets to service, generating a **3x cost-mitigation saving** for every euro spent efficiently.
+A Python application that prioritizes preventive maintenance using a risk-based approach.
 
-## 📦 Installation & Usage
-1. Clone this repository:
-   ```bash
-   git clone https://github.com
-   ```
-2. Run the script:
-   ```bash
-   python fleet_optimizer.py
-   ```
+### Business Value
 
-## 📊 Sample Output
-```text
-=== FLEET OPTIMIZATION REPORT ===
-  Vehicle_ID  Risk_Score  Urgent_Action  Budget_Allocated
-0       V-01        0.88           True              True
-1       V-02        0.26          False             False
-2       V-03        1.00           True              True
-3       V-04        0.16          False             False
-4       V-05        0.78           True             False
+Unplanned vehicle breakdowns may cost companies several times more than preventive maintenance.
 
-Total Net Savings Generated: 5400.0 EUR
+This project helps organizations:
+
+- Predict maintenance risk
+- Prioritize limited maintenance budgets
+- Reduce operational costs
+- Improve fleet availability
+- Estimate Return on Investment (ROI)
+
+### Technologies
+
+- Python
+- Pandas
+- Object-Oriented Programming (OOP)
+- Business Analytics
+
+---
+
+## 🌍 Border Crossing Optimizer
+
+A simulation tool designed around the **Trieste–Belgrade logistics corridor**.
+
+The project estimates customs congestion by analysing:
+
+- Border capacity
+- Truck arrivals
+- Waiting time
+- Queue formation
+
+It demonstrates how simulation models can support logistics planning and infrastructure decision making.
+
+### Technologies
+
+- Python
+- Dataclasses
+- Process Simulation
+- Operations Management
+
+---
+
+# 🛠 Skills Demonstrated
+
+- Business Analysis
+- Operations Management
+- Logistics Optimization
+- Project Management
+- Decision Support Systems
+- Data Analysis
+- Object-Oriented Programming
+- Python
+- Pandas
+
+---
+
+# 📦 Installation
+
+```bash
+git clone https://github.com/USERNAME/logistics-optimization-toolkit.git
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run any project
+
+```bash
+python fleet_optimizer.py
+```
+
+or
+
+```bash
+python border_crossing_optimizer.py
 ```
 
 ---
-**Author**: Andela Stojanovic  
-*Management Engineering Student | Certified in Power BI, Python (Cisco) & Google Project Management*
+
+# 🚀 Roadmap
+
+Future projects planned for this repository:
+
+- Power BI Executive Dashboard
+- Supply Chain KPI Simulator
+- Inventory Optimization Model
+- Transportation Cost Optimizer
+- PMO Analytics Dashboard
+
+---
+
+# 👩‍💻 Author
+
+**Andela Stojanovic**
+
+Management Engineering Student
+
+Google Project Management
+
+Microsoft Power BI Data Analyst
+
+Cisco Python • Networking • Cybersecurity
+
+🇮🇹 Italian & Serbian | 🇬🇧 English
+
+LinkedIn:
+www.linkedin.com/in/andela-stojanovic
+
+GitHub:
+github.com/andelastojanovic
