@@ -1,14 +1,17 @@
 """
-Border Crossing Optimizer
--------------------------
-Simulation of customs border congestion on the Trieste–Belgrade logistics corridor.
+Border Crossing Operations Simulator
+------------------------------------
+
+Simulation of customs border performance for the Trieste–Belgrade
+logistics corridor.
 
 Author:
 Andela Stojanovic
 
 Purpose:
-Estimate customs waiting times and identify congestion scenarios
-to support logistics planning and resource allocation.
+Support logistics managers and operations teams by estimating customs
+capacity, congestion levels and operational performance through
+business-oriented KPIs.
 """
 
 from dataclasses import dataclass
@@ -19,55 +22,105 @@ class BorderCrossingResult:
     """Stores the simulation results."""
 
     status: str
-    trucks_waiting: int
+    arriving_trucks: int
+    processed_trucks: int
+    delayed_trucks: int
+    queue_length: int
     waiting_time_hours: float
+    border_utilization: float
     total_capacity: int
+    recommendation: str
 
 
-class BorderCrossingOptimizer:
-    """Simulates customs border capacity and congestion."""
+class BorderCrossingSimulator:
+    """Simulates customs border operations and congestion."""
 
-    def __init__(self, gates_open: int):
-        self.gates_open = gates_open
-        self.capacity_per_gate = 15
+    def __init__(self, open_gates: int, capacity_per_gate: int = 15):
+        self.open_gates = open_gates
+        self.capacity_per_gate = capacity_per_gate
 
-    def simulate(self, arriving_trucks_per_hour: int) -> BorderCrossingResult:
+    def simulate(self, arriving_trucks: int) -> BorderCrossingResult:
 
-        total_capacity = self.gates_open * self.capacity_per_gate
+        total_capacity = self.open_gates * self.capacity_per_gate
 
-        if arriving_trucks_per_hour > total_capacity:
+        utilization = round((arriving_trucks / total_capacity) * 100, 1)
 
-            queue = arriving_trucks_per_hour - total_capacity
-            waiting_time = round(queue / total_capacity, 2)
+        processed = min(arriving_trucks, total_capacity)
 
-            status = "CRITICAL"
+        delayed = max(arriving_trucks - total_capacity, 0)
+
+        queue = delayed
+
+        if delayed == 0:
+            waiting_time = 0.15
+        else:
+            waiting_time = round(delayed / total_capacity, 2)
+
+        if utilization < 80:
+            status = "OPTIMAL"
+            recommendation = "No action required."
+
+        elif utilization < 100:
+            status = "BUSY"
+            recommendation = "Monitor traffic conditions."
+
+        elif utilization < 130:
+            status = "CONGESTED"
+            recommendation = "Consider opening an additional customs gate."
 
         else:
-
-            queue = 0
-            waiting_time = 0.15
-            status = "OPTIMAL"
+            status = "CRITICAL"
+            recommendation = "Deploy emergency customs resources immediately."
 
         return BorderCrossingResult(
             status=status,
-            trucks_waiting=queue,
+            arriving_trucks=arriving_trucks,
+            processed_trucks=processed,
+            delayed_trucks=delayed,
+            queue_length=queue,
             waiting_time_hours=waiting_time,
+            border_utilization=utilization,
             total_capacity=total_capacity,
+            recommendation=recommendation,
         )
+
+
+def print_report(result: BorderCrossingResult):
+
+    print("\n========================================")
+    print("      BORDER PERFORMANCE REPORT")
+    print("========================================")
+
+    print(f"Incoming Trucks:      {result.arriving_trucks}")
+    print(f"Open Gates Capacity:  {result.total_capacity} trucks/hour")
+    print(f"Processed Trucks:     {result.processed_trucks}")
+    print(f"Delayed Trucks:       {result.delayed_trucks}")
+    print(f"Queue Length:         {result.queue_length}")
+    print(f"Border Utilization:   {result.border_utilization}%")
+    print(f"Waiting Time:         {result.waiting_time_hours} hours")
+    print(f"Status:               {result.status}")
+    print(f"Recommendation:       {result.recommendation}")
+
+    print("========================================\n")
 
 
 def main():
 
-    optimizer = BorderCrossingOptimizer(gates_open=3)
+    simulator = BorderCrossingSimulator(open_gates=3)
 
-    result = optimizer.simulate(arriving_trucks_per_hour=50)
+    scenarios = {
+        "Normal Day": 35,
+        "Peak Traffic": 50,
+        "Holiday Season": 70,
+    }
 
-    print("\n=== BORDER CROSSING REPORT ===\n")
+    for scenario, trucks in scenarios.items():
 
-    print(f"Status: {result.status}")
-    print(f"Total Capacity: {result.total_capacity} trucks/hour")
-    print(f"Queue: {result.trucks_waiting} trucks")
-    print(f"Estimated Waiting Time: {result.waiting_time_hours} hours")
+        print(f"\nScenario: {scenario}")
+
+        result = simulator.simulate(arriving_trucks=trucks)
+
+        print_report(result)
 
 
 if __name__ == "__main__":
